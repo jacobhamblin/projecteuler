@@ -1,14 +1,12 @@
-def theSumofEvens
+def sum_of_evens(num)
   arr = [1, 2]
 
-  sum = []
-  while arr[-1] <= 4000000
-    newValue = arr[-1] + arr[-2]
-    arr << newValue
+  while arr[-1] <= num
+    arr << (arr[-1] + arr[-2])
   end
 
-  arr = arr.select { |n| n % 2 == 0 }
-  sumofEvens = arr.inject(0) { |memo, v| memo += v }
+  arr.select { |n| n % 2 == 0 }.inject(:+)
 end
 
-p theSumofEvens
+p sum_of_evens(4000000)
+
